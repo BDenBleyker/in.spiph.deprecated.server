@@ -21,6 +21,8 @@ public interface IPacketManager {
     public void sendPacket(APacket packet) throws IOException;
 
     public APacket parsePacket(int type, char arr[]);
+    
+    public boolean authenticate();
 
     public void close();
 }

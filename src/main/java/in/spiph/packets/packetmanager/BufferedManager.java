@@ -7,6 +7,7 @@ package in.spiph.packets.packetmanager;
 
 import in.spiph.packets.APacket;
 import in.spiph.packets.ErrorPacket;
+import in.spiph.packets.authenticate.AuthenticationRequestPacket;
 import in.spiph.packets.iplookup.IpLookupPacket;
 import in.spiph.packets.iplookup.IpLookupResponsePacket;
 import in.spiph.packets.test.TestPacket;
@@ -18,6 +19,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -109,6 +112,17 @@ public class BufferedManager implements IPacketManager {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean authenticate() {
+        try {
+            sendPacket(new AuthenticationRequestPacket());
+            readPacket();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 
 }
