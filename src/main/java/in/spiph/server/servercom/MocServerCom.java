@@ -5,9 +5,9 @@
  */
 package in.spiph.server.servercom;
 
-import in.spiphi.info.Page;
-import in.spiphi.info.Post;
-import in.spiphi.info.Server;
+import in.spiph.info.Page;
+import in.spiph.info.Post;
+import in.spiph.info.Server;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
