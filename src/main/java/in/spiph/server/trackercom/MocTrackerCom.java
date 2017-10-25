@@ -12,7 +12,18 @@ import in.spiph.packets.iplookup.IpLookupResponsePacket;
  *
  * @author Bennett.DenBleyker
  */
-public interface ITrackerCom {
-    public boolean sendIp(Tracker tracker);
-    public IpLookupResponsePacket getIp(long id);
+public class MocTrackerCom implements ITrackerCom {
+
+    String ip = "127.0.0.1";
+    
+    @Override
+    public boolean sendIp(Tracker tracker) {
+        return true;
+    }
+
+    @Override
+    public IpLookupResponsePacket getIp(long id) {
+        return new IpLookupResponsePacket("127.0.0.1");
+    }
+    
 }

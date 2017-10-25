@@ -6,15 +6,16 @@
 package in.spiph.server.localclientcom;
 
 import in.spiph.info.Client;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  *
  * @author Bennett.DenBleyker
  */
-public interface IClientCom {
-    Map<Long,Long> ID2PKEYMAP = new HashMap();
+public class MocClientCom implements IClientCom {
+
+    @Override
+    public boolean authenticate(Client client) {
+        return IClientCom.ID2PKEYMAP.getOrDefault(client.getId(), 0L) == 0L;
+    }
     
-    public boolean authenticate(Client client);
 }

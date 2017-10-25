@@ -18,7 +18,7 @@ import java.util.Scanner;
  *
  * @author Gabriel.Maxfield
  */
-public class MocFileManager implements IDataManager {
+public class MocFileManager implements IDataManager {//Should this be a moc?
 
     @Override
     public void saveFile(String path, String name, String data) {
